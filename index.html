@@ -7,24 +7,46 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<div class="container col-12 m-0 p-0">
+	<div class="container p-0">
 			<h1 class="d-inline offset-5 col-8">Coffee!</h1>
 		<hr>
-		<div class="container col-6 m-0 p-0">
-		    <form>
-		        <label for="roast-selection"></label>
-		        <select id="roast-selection">
-		            <option>light</option>
-		            <option>medium</option>
-		            <option>dark</option>
-		        </select>
-		        <input id="submit" type="submit" />
-		    </form>
+		<div class="col-6 m-0 p-0 float-right">
+
+            <form>
+                <div class="form-group">
+                    <label for="roast-selection">Roast</label>
+                    <select id="roast-selection" class="form-control">
+                        <option>light</option>
+                        <option>medium</option>
+                        <option>dark</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="coffeeName1">Coffee Name</label>
+                    <input type="text" class="form-control" id="coffeeName1">
+                </div>
+                <button type="submit" class="btn btn-primary form-control" id="submit">Submit</button>
+            </form>
+            <hr>
+            <h3 class="offset-4 col-5">Add a Coffee</h3>
+            <form>
+                <div class="form-group">
+                    <label for="roast-addition">Roast</label>
+                    <select id="roast-addition" class="form-control">
+                        <option>light</option>
+                        <option>medium</option>
+                        <option>dark</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="coffeeName2">Coffee Name</label>
+                    <input type="text" class="form-control" id="coffeeName2">
+                </div>
+                <button type="submit" class="btn btn-primary form-control" id="create">Submit</button>
+            </form>
 		</div>
-		<div class="container col-6 m-0 p-0">
-			<div class="d-inline-block">
+		<div class="col-6 m-0 p-0">
 				<div id="coffees"></div>
-			</div>
 		</div>
 	</div>
     <script src="main.js"></script>
