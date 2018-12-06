@@ -15,15 +15,16 @@
             <form>
                 <div class="form-group">
                     <label for="roast-selection">Roast</label>
-                    <select id="roast-selection" class="form-control">
+                    <select id="roast-selection" class="form-control" onkeypress="updateCoffees(option)">
+	                    <option>all</option>
                         <option>light</option>
                         <option>medium</option>
                         <option>dark</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="coffeeName1">Coffee Name</label>
-                    <input type="text" class="form-control" id="coffeeName1">
+                    <label for="coffeeSearch">Coffee Name</label>
+                    <input type="text" class="form-control" id="coffeeSearch" oninput="updateCoffees()">
                 </div>
                 <button type="submit" class="btn btn-primary form-control" id="submit">Submit</button>
             </form>
@@ -33,7 +34,7 @@
                 <div class="form-group">
                     <label for="roast-addition">Roast</label>
                     <select id="roast-addition" class="form-control">
-                        <option>light</option>
+	                    <option>light</option>
                         <option>medium</option>
                         <option>dark</option>
                     </select>
