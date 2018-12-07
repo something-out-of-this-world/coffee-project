@@ -1,19 +1,13 @@
-table {
-    border-collapse: collapse;
-    margin: 15px 0;
-}
-
-td, th {
-    border: 1px solid black;
-    padding: 5px 10px;
-}
 .container{
     height: 400px;
 }
 body{
-    background-color: #d60648;
-    color: #06d694;
+    background-image: url('img/christmas-colour.png');
+    color: #d60648;
 }
 .btn-primary{
     background-color: #05a16f;
+}
+h1, h3 {
+    text-shadow: -5px 5px 0 lightgrey;
 }

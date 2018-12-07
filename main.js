@@ -1,5 +1,31 @@
 "use strict";
 
+var divbody = document.querySelector('#coffees');
+var submitButton = document.querySelector('#submit');
+var roastSelection = document.querySelector('#roast-selection');
+var coffeeName = document.querySelector('#coffeeName');
+var addBtn = document.querySelector('#create');
+var addedCoffee = document.querySelector('#coffee-name-add');
+var addedRoast = document.querySelector('#roast-addition');
+
+// from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
+var coffees = [
+    {id: 1, name: 'Light City', roast: 'light'},
+    {id: 2, name: 'Half City', roast: 'light'},
+    {id: 3, name: 'Cinnamon', roast: 'light'},
+    {id: 4, name: 'City', roast: 'medium'},
+    {id: 5, name: 'American', roast: 'medium'},
+    {id: 6, name: 'Breakfast', roast: 'medium'},
+    {id: 7, name: 'High', roast: 'dark'},
+    {id: 8, name: 'Continental', roast: 'dark'},
+    {id: 9, name: 'New Orleans', roast: 'dark'},
+    {id: 10, name: 'European', roast: 'dark'},
+    {id: 11, name: 'Espresso', roast: 'dark'},
+    {id: 12, name: 'Viennese', roast: 'dark'},
+    {id: 13, name: 'Italian', roast: 'dark'},
+    {id: 14, name: 'French', roast: 'dark'}
+];
+
 function renderCoffee(coffee) {
     var html = '<div class="coffee mb-5">';
     html += '<div class="mr-5"><h3 class="d-inline">' + coffee.name  + '</h3>';
@@ -43,33 +69,6 @@ function createCoffee(e) {
 
     divbody.innerHTML = renderCoffees(coffees);
 }
-// from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
-var coffees = [
-    {id: 1, name: 'Light City', roast: 'light'},
-    {id: 2, name: 'Half City', roast: 'light'},
-    {id: 3, name: 'Cinnamon', roast: 'light'},
-    {id: 4, name: 'City', roast: 'medium'},
-    {id: 5, name: 'American', roast: 'medium'},
-    {id: 6, name: 'Breakfast', roast: 'medium'},
-    {id: 7, name: 'High', roast: 'dark'},
-    {id: 8, name: 'Continental', roast: 'dark'},
-    {id: 9, name: 'New Orleans', roast: 'dark'},
-    {id: 10, name: 'European', roast: 'dark'},
-    {id: 11, name: 'Espresso', roast: 'dark'},
-    {id: 12, name: 'Viennese', roast: 'dark'},
-    {id: 13, name: 'Italian', roast: 'dark'},
-    {id: 14, name: 'French', roast: 'dark'}
-];
-
-var divbody = document.querySelector('#coffees');
-var submitButton = document.querySelector('#submit');
-var roastSelection = document.querySelector('#roast-selection');
-var coffeeName = document.querySelector('#coffeeName');
-var addBtn = document.querySelector('#create');
-var addedCoffee = document.querySelector('#coffee-name-add');
-var addedRoast = document.querySelector('#roast-addition')
-
-divbody.innerHTML = renderCoffees(coffees);
 
 function updateResult(query) {
     var resultList = document.querySelector("#coffees");
@@ -107,6 +106,11 @@ function updateBackground(){
             break;
     }
 }
+
+
+divbody.innerHTML = renderCoffees(coffees);
+
+
 roastSelection.addEventListener('change', updateBackground);
 roastSelection.addEventListener('change', updateCoffees);
 submitButton.addEventListener('click', updateCoffees);

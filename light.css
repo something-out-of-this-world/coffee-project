@@ -1,17 +1,8 @@
-table {
-    border-collapse: collapse;
-    margin: 15px 0;
-}
-
-td, th {
-    border: 1px solid black;
-    padding: 5px 10px;
-}
 .container{
     height: 400px;
 }
 body{
-    background-color: #509de2;
+    background-image: url("img/christmas-dark.png");
     color: #e29550;
 }
 .btn-primary {
