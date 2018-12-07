@@ -10,6 +10,10 @@ td, th {
 .container{
     height: 400px;
 }
-body {
-    background-color: white;
+body{
+    background-color: #509de2;
+    color: #e29550;
+}
+.btn-primary {
+    background-color: #9550e2;
 }

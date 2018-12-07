@@ -88,12 +88,26 @@ function updateResult(query) {
     })
 }
 
-function updateBackground(){
-
+function swapStyleSheet(sheet) {
+    document.getElementById("style1").setAttribute("href", sheet);
 }
-
-roastSelection.addEventListener('change', updateCoffees);
+function updateBackground(){
+    switch (roastSelection.value) {
+        case 'light':
+            swapStyleSheet("light.css");
+            break;
+        case 'medium':
+            swapStyleSheet("medium.css");
+            break;
+        case 'dark':
+            swapStyleSheet("dark.css");
+            break;
+        default:
+            swapStyleSheet("style.css");
+            break;
+    }
+}
 roastSelection.addEventListener('change', updateBackground);
-// coffeeSearch.addEventListener('input', updateCoffees);
+roastSelection.addEventListener('change', updateCoffees);
 submitButton.addEventListener('click', updateCoffees);
 addBtn.addEventListener('click', createCoffee);
