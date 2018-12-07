@@ -92,6 +92,8 @@ function updateResult(query) {
     })
 }
 
+roastSelection.addEventListener('change', updateCoffees);
+
 // coffeeSearch.addEventListener('input', updateCoffees);
 submitButton.addEventListener('click', updateCoffees);
 addBtn.addEventListener('click', createCoffee);
