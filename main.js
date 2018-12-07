@@ -26,6 +26,7 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark'}
 ];
 
+//
 function renderCoffee(coffee) {
     var html = '<div class="coffee mb-5">';
     html += '<div class="mr-5"><h3 class="d-inline">' + coffee.name  + '</h3>';
@@ -34,6 +35,7 @@ function renderCoffee(coffee) {
     return html;
 }
 
+//creats a loop that calls render coffee
 function renderCoffees(coffees) {
     var html = '';
     for(var i = 0; i <= coffees.length -1; i++) {
@@ -42,6 +44,7 @@ function renderCoffees(coffees) {
     return html;
 }
 
+//need I explain?
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
@@ -59,6 +62,7 @@ function updateCoffees(e) {
     }
 }
 
+//self explanatory
 function createCoffee(e) {
     e.preventDefault();
     coffees.push({
@@ -70,6 +74,8 @@ function createCoffee(e) {
     divbody.innerHTML = renderCoffees(coffees);
 }
 
+
+//this will look for words containing the search parameters
 function updateResult(query) {
     var resultList = document.querySelector("#coffees");
     resultList.innerHTML = "";
@@ -90,6 +96,7 @@ function updateResult(query) {
 function swapStyleSheet(sheet) {
     document.getElementById("style1").setAttribute("href", sheet);
 }
+//update background changes stylesheets by calling the swap stylesheet function
 function updateBackground(){
     switch (roastSelection.value) {
         case 'light':
