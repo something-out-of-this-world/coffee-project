@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 function renderCoffee(coffee) {
     var html = '<div class="coffee mb-5">';
@@ -42,7 +42,7 @@ function createCoffee(e) {
         id: coffees.length,
         name: addedCoffee,
         roast: addedRoast
-    })
+    });
 
     divbody.innerHTML = renderCoffees(coffees);
 }
@@ -75,6 +75,23 @@ var addedRoast = document.querySelector('#roast-addition')
 
 divbody.innerHTML = renderCoffees(coffees);
 
-coffeeSearch.addEventListener('input', updateCoffees);
+function updateResult(query) {
+    var resultList = document.querySelector("#coffees");
+    resultList.innerHTML = "";
+    var selectedRoast = roastSelection.value;
+    //for each element in the new array its calling the function
+    coffees.map(function(coffee){
+        //taking the input of the function updateResult(), splitting it and making a new array
+        //for each element in the array its calling the function
+        query.split(" ").map(function (word) {
+            if((coffee.name.indexOf(word) != -1) && (selectedRoast === coffee.roast || selectedRoast === 'all')){
+                console.log(coffee.name);
+                resultList.innerHTML += '<div class="col-4"><h3>' + coffee.name + '</h3><p>' + coffee.roast + '</p></div>';
+            }
+        })
+    })
+}
+
+// coffeeSearch.addEventListener('input', updateCoffees);
 submitButton.addEventListener('click', updateCoffees);
 addBtn.addEventListener('click', createCoffee);
