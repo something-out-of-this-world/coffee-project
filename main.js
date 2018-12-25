@@ -27,8 +27,8 @@ var coffees = [
 ];
 
 //
-function renderCoffee(coffee) {
-    var html = '<div class="coffee mb-5">';
+const renderCoffee = (coffee) => {
+    let html = '<div class="coffee mb-5">';
     html += '<div class="mr-5"><h3 class="d-inline">' + coffee.name  + '</h3>';
     html += '<p class="d-inline pl-2">' + coffee.roast + '</p></div>';
     html += '</div>';
@@ -36,20 +36,20 @@ function renderCoffee(coffee) {
 }
 
 //creats a loop that calls render coffee
-function renderCoffees(coffees) {
-    var html = '';
-    for(var i = 0; i <= coffees.length -1; i++) {
+const renderCoffees = (coffees) => {
+    let html = '';
+    for(let i = 0; i <= coffees.length -1; i++) {
         html += renderCoffee(coffees[i]);
     }
     return html;
 }
 
 //need I explain?
-function updateCoffees(e) {
+const updateCoffees = (e) => {
     e.preventDefault(); // don't submit the form, we just want to update the data
-    var selectedRoast = roastSelection.value;
-    var searchedCoffee = coffeeName.value;
-    var filteredCoffees = [];
+    let selectedRoast = roastSelection.value;
+    let searchedCoffee = coffeeName.value;
+    let filteredCoffees = [];
     coffees.forEach(function(coffee) {
         if (coffee.roast === selectedRoast && (coffee.name === searchedCoffee || searchedCoffee === '')) {
             filteredCoffees.unshift(coffee);
@@ -60,10 +60,10 @@ function updateCoffees(e) {
     }else {
         divbody.innerHTML = renderCoffees(filteredCoffees);
     }
-}
+};
 
 //self explanatory
-function createCoffee(e) {
+const createCoffee = (e) => {
     e.preventDefault();
     coffees.push({
         id: coffees.length,
@@ -72,14 +72,14 @@ function createCoffee(e) {
     });
 
     divbody.innerHTML = renderCoffees(coffees);
-}
+};
 
 
 //this will look for words containing the search parameters
-function updateResult(query) {
-    var resultList = document.querySelector("#coffees");
+const updateResult = (query) => {
+    let resultList = document.querySelector("#coffees");
     resultList.innerHTML = "";
-    var selectedRoast = roastSelection.value;
+    const selectedRoast = roastSelection.value;
     //for each element in the new array its calling the function
     coffees.map(function(coffee){
         //taking the input of the function updateResult(), splitting it and making a new array
@@ -91,13 +91,13 @@ function updateResult(query) {
             }
         })
     })
-}
+};
 
-function swapStyleSheet(sheet) {
+const swapStyleSheet = (sheet) => {
     document.getElementById("style1").setAttribute("href", sheet);
-}
+};
 //update background changes stylesheets by calling the swap stylesheet function
-function updateBackground(){
+const updateBackground = () => {
     switch (roastSelection.value) {
         case 'light':
             swapStyleSheet("light.css");
